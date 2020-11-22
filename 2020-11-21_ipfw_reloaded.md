@@ -162,7 +162,7 @@ Pour tester et vérifier (ne pas hésiter à faire volontairement des typos dans
     $add pass in dst-port ntp,syslog,546 via xnb*
     $add pass in src-port bootps via vlan22
 
-Cette machine fournit un service dns à accès restreint, un service http non restreint et laisse passer du traffic en provenance/destination des domU (j'y reviendrais certainenement dans un autre billet).
+Cette machine fournit un service dns à accès restreint, un service http non restreint et laisse passer du traffic en provenance/destination des domU (j'y reviendrais certainement dans un autre billet).
 
 ## A venir
 
