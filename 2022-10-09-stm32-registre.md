@@ -1,14 +1,14 @@
 ###### 202210090800 stm32 bluepill
 # FreeBSD et bluepill
 
-A force de suivre les vidéos de (Sieur Rancune)[https://www.twitch.tv/rancune_] j'ai fini par craquer pour une poignée de (bluepill)[https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html].
+A force de suivre les vidéos de [Sieur Rancune](https://www.twitch.tv/rancune_) j'ai fini par craquer pour une poignée de [bluepill](https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html).
 Parce qu'il est conseillé sur tous les interweb d'utiliser **arm-none-eabi-gcc** pour programmer ces charmantes bestioles j'ai décidé d'utiliser clang/llvm livré de base.
 
-Si allumer une led constitue le 'Hello World!' de l'électronique, j'ai découvert le niveau -1 en lisant (cette série de billets)[https://vivonomicon.com/2018/04/02/bare-metal-stm32-programming-part-1-hello-arm/]: placer une valeur particulière dans un registre.
+Si allumer une led constitue le 'Hello World!' de l'électronique, j'ai découvert le niveau -1 en lisant [cette série de billets](https://vivonomicon.com/2018/04/02/bare-metal-stm32-programming-part-1-hello-arm/): placer une valeur particulière dans un registre.
 
 ## Les sources
 
-Le fichier (core.S)[https://raw.githubusercontent.com/WRansohoff/STM32F0_minimal/master/core.S] requiert 3 modifications mineures:
+Le fichier [core.S](https://raw.githubusercontent.com/WRansohoff/STM32F0_minimal/master/core.S) requiert 3 modifications mineures:
 
 - adapter le type de cpu
 - modifier la casse de la fonction **reset_handler**
