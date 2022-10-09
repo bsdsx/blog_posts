@@ -206,4 +206,4 @@ Pour être sûr de mon coup, j'essaie avec les valeurs suivantes:
 
 A moi les <blink>leds</blink> qui clignottent !
 
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/14](https://github.com/bsdsx/blog_posts/issues/14)
+Commentaires: [https://github.com/bsdsx/blog_posts/issues/15](https://github.com/bsdsx/blog_posts/issues/15)
