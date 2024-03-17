@@ -49,7 +49,7 @@ Pour que **bhyve** puisse utiliser une image **efi** je dois ajouter le paquet s
 
 et je vérifie que la machine virtuelle démarre bien:
 
-    $ doas bhyve -H -P -m 192M -s 0:0,hostbridge -s 1:0,lpc -s 3:0,virtio-blk,./openwrt-23.05.2-x86-64-generic-ext4-combined-efi.img -l bootrom,/usr/local/share/uefi-firmware/BHYVE_UEFI.fd -l com1,stdio -W vm0
+    $ doas bhyve -H -P -m 192M -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -s 3:0,virtio-blk,./openwrt-23.05.2-x86-64-generic-ext4-combined-efi.img -l bootrom,/usr/local/share/uefi-firmware/BHYVE_UEFI.fd -l com1,stdio -W vm0
 
 Un **halt** plus tard je peux détruire cette machine virtuelle:
 
@@ -115,7 +115,7 @@ Je démarre la machine virtuelle avec ce nouveau disque:
 
     $ doas umount /media
     $ doas mdconfig -du md0
-    $ doas bhyve -H -P -m 192M -s 0:0,hostbridge -s 1:0,lpc -s 3:0,virtio-blk,./openwrt-23.05.2-x86-64-generic-ext4-combined-efi.img -s 4:0,virtio-blk,./pkgs.img -l bootrom,/usr/local/share/uefi-firmware/BHYVE_UEFI.fd -l com1,stdio -W vm0
+    $ doas bhyve -H -P -m 192M -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -s 3:0,virtio-blk,./openwrt-23.05.2-x86-64-generic-ext4-combined-efi.img -s 4:0,virtio-blk,./pkgs.img -l bootrom,/usr/local/share/uefi-firmware/BHYVE_UEFI.fd -l com1,stdio -W vm0
 
 et j'installe les paquets:
 
@@ -152,7 +152,7 @@ et j'installe les paquets:
 
 Il est temps d'affecter le périphérique wifi à la machine virtuelle (adapter **2/0/0** au **pciconf -lv** et ne pas oublier l'option **-S**):
 
-    $ doas bhyve -H -P -S -m 192M -s 0:0,hostbridge -s 1:0,lpc -s 3:0,virtio-blk,./openwrt-23.05.2-x86-64-generic-ext4-combined-efi.img -s 7:0,passthru,2/0/0 -l bootrom,/usr/local/share/uefi-firmware/BHYVE_UEFI.fd -l com1,stdio -W vm0
+    $ doas bhyve -H -P -S -m 192M -s 0:0,hostbridge -s 1:0,lpc -s 2:0,virtio-net,tap0 -s 3:0,virtio-blk,./openwrt-23.05.2-x86-64-generic-ext4-combined-efi.img -s 7:0,passthru,2/0/0 -l bootrom,/usr/local/share/uefi-firmware/BHYVE_UEFI.fd -l com1,stdio -W vm0
 
 ## Configuration OpenWrt
 
@@ -338,3 +338,7 @@ mais c'est toujours mieux que la dizaine de Mbits/sec (dont je me contentais tr�
 Le mini routeur qui trônait fièrement au dessus du nuc devrait finir au fin fond d'un tirroir. Mais comme il possède un lien série, j'en ferais bien un Frankenstein à base de bluetooth ...
 
 Commentaires: [https://github.com/bsdsx/blog_posts/issues/20](https://github.com/bsdsx/blog_posts/issues/20)
+
+## Correction 2024-03-17
+
+J'ai oublié '-s 2:0,virtio-net,tap0' à chaque commande **bhyve**.
