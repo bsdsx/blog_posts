@@ -113,8 +113,8 @@ Pour me simplifier la vie, je rajoute une section 'DEFAULT' à mon fichier ".ini
 
 et une section pour mon instance:
 
-[123456789]
-productId = V45 # VPS 1 SSD (no setup)
+    [123456789]
+    productId = V45 # VPS 1 SSD (no setup)
 
 et je réinstalle mon vps:
 
