@@ -1,5 +1,9 @@
-###### 202001251100 ipfw shell
-# ipfw: modern FreeBSD, services
+---
+title: ipfw: modern FreeBSD, services
+id_issue: 3
+tags: ipfw
+  shell
+---
 
 Pour illustrer mon propos, il me faut un service. Un truc simple qui fasse udp/tcp et ipv6/ipv4. J'aurais pu utiliser **nc -k -l 1234** mais il n'est pas possible de faire tcp/udp/ipv6/ipv4 en même temps (sauf à lancer 4 nc). J'ai donc jeter mon dévolu sur **daytime** fourni par **inetd**:
 
@@ -23,11 +27,11 @@ On doit voir une trace de ces connexions dans la console où est lancé **inetd*
 
 J'aime assez le concept de mur de feu piloté par des variables. Mon service **ssh** est géré par les variables suivantes:
 
-- firewall_ssh6
-- firewall_ssh4
-- firewall_t_ssh
+- firewall _ ssh6
+- firewall _ ssh4
+- firewall _ t _ ssh
 
-Le nommage de ces variables suit cette règle: 'firewall' + nom_du_service + 4|6 ou 'firewall' + 't' + nom_du_service. Cette règle à (au moins) 2 défauts:
+Le nommage de ces variables suit cette règle: 'firewall' + nom _ du _ service + 4|6 ou 'firewall' + 't' + nom _ du _ service. Cette règle à (au moins) 2 défauts:
 
 - pas de distinction udp/tcp
 - les variables utilisent le nom du service (**ssh**) alors que le script utilise le numéro de port associé (**22**)
@@ -57,10 +61,10 @@ Pour simplifier mes règles, je pars du principe qu'un service est à la fois **
 - 1: je définis une liste de service (on portera une attention particulière aux services "http" et "daytime")
 - 3-4: un service "proxy" écoute sur le port "3128" en mode "restreint" à partir d'une liste (qui sera transformée en table)
 - 6: un service "dns" écoute sur les ports "53", "853" et "8853" en mode "ouvert aux 4 vents"
-- 8-9: un service "foo" écoute sur le port "9000" en mode "restreint" en utilisant la table "t_bar" qui sera définie plus tard
-- 11-12: un service "bar" écoute sur les ports "9001" et "9002" en mode "restreint" en utilisant sa table "t_bar" qui sera chargée à partir de fichiers
-- 14-15: un service "baz" écoute sur le port "9003" en mode "restreint" en utilisant la table "t_bar" définie plus tôt
-- 17-18: un service "mail_int" écoute sur des ports qui semblent concerner le courriel (smtp, submission, imap, imaps et sieve) en mode "restreint" en utilisant la table "t_ssh"
+- 8-9: un service "foo" écoute sur le port "9000" en mode "restreint" en utilisant la table "t _ bar" qui sera définie plus tard
+- 11-12: un service "bar" écoute sur les ports "9001" et "9002" en mode "restreint" en utilisant sa table "t _ bar" qui sera chargée à partir de fichiers
+- 14-15: un service "baz" écoute sur le port "9003" en mode "restreint" en utilisant la table "t _ bar" définie plus tôt
+- 17-18: un service "mail _ int" écoute sur des ports qui semblent concerner le courriel (smtp, submission, imap, imaps et sieve) en mode "restreint" en utilisant la table "t _ ssh"
 
 Sans configuration particulière, les services "http" et "daytime" écoutent sur leur port respectif en mode "ouvert aux 4 vents".
 
@@ -98,10 +102,10 @@ Je veux aussi pouvoir traiter les gros doigts ("port" vs "ports") et les listes 
     87	$add deny log in
 
 - 66: je normalise le contenu de la variable **firewall_services** à l'aide de **tr**
-- 67: l'échappement de nombreux caractères ne facilite pas la lecture: définir une variable **port** à partir de **{firewall_svc_ports:-{firewall_svc_port:-svc}}**
+- 67: l'échappement de nombreux caractères ne facilite pas la lecture: définir une variable **port** à partir de **{firewall _ svc _ ports:-{firewall _ svc _ port:-svc}}**
 - 68: je normalise le contenu de **port** s'il est différent de **svc**
-- 70-73: si mon service utilise une table et que le nom de cette table ne correspond pas à t_service alors j'ajoute une règle en mode "restreint" + règle dynamique et je passe au service suivant
-- 75-79: si mon service n'est pas en mode "restreint" (les variables **firewall_svc(6|4)** et **firewall_t_svc** sont vides) alors j'ajoute une règle en mode "ouvert aux 4 vents" + règle dynamique et je passe au service suivant
+- 70-73: si mon service utilise une table et que le nom de cette table ne correspond pas à t _ service alors j'ajoute une règle en mode "restreint" + règle dynamique et je passe au service suivant
+- 75-79: si mon service n'est pas en mode "restreint" (les variables **firewall _ svc(6|4)** et **firewall _ t _ svc** sont vides) alors j'ajoute une règle en mode "ouvert aux 4 vents" + règle dynamique et je passe au service suivant
 - 81-83: je crée une table correspondant au service (ou je la vide si elle existe déjà: **or-flush**), je la charge et j'ajoute une règle en mode "restreint" + règle dynamique
 
 ## Au final
@@ -137,5 +141,3 @@ Si depuis une machine distante je teste le port "13" en udp ("nc -z -u -4 ip.de.
 C'est un peu plus compliqué avec le tcp car la règle est supprimée dès que la connexion est terminée (et elle se termine très vite :).
 
     01400    7     406 (1s) STATE tcp 172.16.200.193 24467 <-> 172.16.100.50 13 :default
-
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/3](https://github.com/bsdsx/blog_posts/issues/3)

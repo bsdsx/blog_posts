@@ -1,4 +1,10 @@
-###### 202504160800 cloudinit contabo vps
+---
+title: VPS chez Contabo
+id_issue: 22
+tags: cloudinit
+  contabo
+  vps
+---
 
 Pour commencer:
 
@@ -189,5 +195,3 @@ Et parce que l'ipv6 n'est pas un long fleuve tranquille, on peut [avoir besoin d
 ## Conclusion
 
 Je suis très satisfait de mes 3 vps et si la version (pas très fraiche) de FreeBSD peut en rebuter certains, je suis persuadé que les images **BASIC-CLOUDINIT** (un énorme merci à bapt@ pour [nuageinit](https://github.com/freebsd/freebsd-src/blob/main/libexec/rc/rc.d/nuageinit) ) seront bientôt disponibles.
-
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/22](https://github.com/bsdsx/blog_posts/issues/22)

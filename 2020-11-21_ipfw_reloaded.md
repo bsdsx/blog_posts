@@ -1,5 +1,9 @@
-###### 202011211200 ipfw shell
-# ipfw: modern FreeBSD (reloaded)
+---
+title: ipfw: modern FreeBSD (reloaded)
+id_issue: 6
+tags: ipfw
+  shell
+---
 
 Après plusieurs mois de production, petit retour sur mon script de mur de feu.
 
@@ -167,5 +171,3 @@ Cette machine fournit un service dns à accès restreint, un service http non re
 ## A venir
 
 J'ai abandonné l'idée de mur de feu entièrement pilotable à coup de variables, le code nécessaire pour définir un service était beaucoup trop volumineux. L'utilisation d'un script local à l'hôte me parait plus simple. La prochaine évolution concernera le **nat** et des règles qui, je l'espère, sortiront des sentiers battus.
-
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/6](https://github.com/bsdsx/blog_posts/issues/6)

@@ -1,5 +1,10 @@
-###### 202109260800 freebsd arm64 blacklistd
-# Un FreeBSD anti-rabouins dans la Freebox
+---
+title: Un FreeBSD anti-rabouins dans la Freebox
+id_issue: 10
+tags: freebsd
+  arm64
+  blacklistd
+---
 
 Les Freebox Delta permettent de lancer des [machines virtuelles](https://portail.free.fr/nouveautes/freebox-delta-les-vms-machines-virtuelles-disponibles-pour-tous-les-utilisateurs-et-utilisatrices-dune-freebox-delta-ou-delta-s/). Détail qui a son importance: mode routeur obligatoire et au moins un disque dur dans la box. Bonne nouvelle: les images FreeBSD sont parfaitement compatibles.
 
@@ -138,5 +143,3 @@ On ne croule pas sous la littérature mais je conseille (en anglais):
 - [make postfix trigger blacklistd on failed authentication](https://imil.net/blog/posts/2020/make-postfix-trigger-blacklistd-on-failed-authentication) pour protéger son Postfix
 
 Depuis sa version 2.0.21 le [serveur http de votre serviteur](https://fossil.bsdsx.fr/mohawk), disponible dans les ports (www/mohawk), peut dialoguer avec **blacklistd**.
-
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/10](https://github.com/bsdsx/blog_posts/issues/10)

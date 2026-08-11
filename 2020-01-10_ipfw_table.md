@@ -1,5 +1,9 @@
-###### 202001161600 ipfw shell
-# ipfw: modern FreeBSD, les tables
+---
+title: ipfw: modern FreeBSD, les tables
+id_issue: 2
+tags: ipfw
+  shell
+---
 
 Les tables permettent de faire des listes de différents types:
 
@@ -285,5 +289,3 @@ Quelques remarques:
 - en mode debug le test de la ligne 31 sera toujours faux
 - en mode "ouvert aux 4 vents" le trafic "ssh" ne génèrera aucune règle dynamique (ligne 33). Ce n'est pas le cas en mode "ssh restreint": le premier paquet d'une connexion **initiée** par la machine (out, dst-port 22) ne correspond pas aux lignes 35-36 mais à la ligne 64 et génère une règle dynamique. Je ne pense pas que ce soit un problème car quand je me connecte sur une machine et que je joue avec les règles du mur de feu, c'est *MA* connexion qui ne doit pas être coupée et la susdite machine va rarement initier du ssh dans mon dos (aka cron) en même temps.
 - le contenu de mes règles suit l'ordre suivant: drapeau - comparaison - recherche
-
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/2](https://github.com/bsdsx/blog_posts/issues/2)

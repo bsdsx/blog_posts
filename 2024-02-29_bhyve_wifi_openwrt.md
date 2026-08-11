@@ -1,4 +1,10 @@
-###### 202402290800 bhyve wifi openwrt
+---
+title: wifibox à la sauce OpenWrt
+id_issue: 20
+tags: bhyve
+  wifi
+  openwrt
+---
 
 J'ai pendant très longtemps utilisé un [mini routeur sous OpenWrt](https://openwrt.org/toh/gl.inet/gl-mt300a) car le wifi de [mon ancien nuc](https://www.intel.com/content/www/us/en/products/sku/95062/intel-nuc-kit-nuc6cayh/specifications.html) n'était ni stable ni performant. Les ressources de ma nouvelle machine de travail (AMD Ryzen 7 3750H) étant bien supérieures, l'idée m'est venue de mimer [FreeBSD wifibox](https://github.com/pgj/freebsd-wifibox) à la sauce OpenWrt. Un portable Lenovo T450 en a aussi fait les frais.
 
@@ -336,8 +342,6 @@ C'est loin d'être parfait au vu de la configuration du réseau:
 mais c'est toujours mieux que la dizaine de Mbits/sec (dont je me contentais très bien) de mon ancienne installation.
 
 Le mini routeur qui trônait fièrement au dessus du nuc devrait finir au fin fond d'un tirroir. Mais comme il possède un lien série, j'en ferais bien un Frankenstein à base de bluetooth ...
-
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/20](https://github.com/bsdsx/blog_posts/issues/20)
 
 ## Correction 2024-03-17
 

@@ -1,5 +1,9 @@
-###### 202006060800 cu bluetooth
-# Configurer un module HC-05 (série/bluetooth)
+---
+title: Configurer un module HC-05 (série/bluetooth)
+id_issue: 5
+tags: bluetooth
+  cu
+---
 
 Ce genre de module se configure à l'aide d'un adaptateur usb / série et des commandes [AT](https://fr.wikipedia.org/wiki/Commandes_Hayes). Mes premiers essais avec **cu** n'ont pas été concluant:
 
@@ -91,5 +95,3 @@ Après quelques secondes de patience (il faut laisser le temps au module de rép
     OK
     ~.
     [EOT]
-
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/5](https://github.com/bsdsx/blog_posts/issues/5)

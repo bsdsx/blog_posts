@@ -1,5 +1,12 @@
-###### 202109171800 ssl tls lets encrypt dns
-# Let's encrypt en 4 étapes
+---
+title: Let's encrypt en 4 étapes
+id_issue: 9
+tags: ssl
+  tls
+  lets
+  encrypt
+  dns
+---
 
 Un package, une entrée dns, une machine avec un nsd et une crontab. Voilà tout ce qu'il m'a fallu pour mettre en place un certificat générique.
 
@@ -119,5 +126,3 @@ hitch:
     $ cat $certs/$domain.key $certs/fullchain.cer $jconf/dhparam.pem > $path/etc/hitch.pem
     $ grep ^pem $path/etc/hitch.pem
     pem-file = "/etc/hitch.pem"
-
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/9](https://github.com/bsdsx/blog_posts/issues/9)

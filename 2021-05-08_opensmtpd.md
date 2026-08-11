@@ -1,11 +1,17 @@
-###### 202105080800 dovecot opensmtpd
-# Authentification des utilisateurs
+---
+title: OpenSMTPD, la suite 
+id_issue: 8
+tags: dovecot
+  opensmtpd
+---
 
 Ce billet fait suite à la [configuration initiale de mon serveur opensmtpd](http://blog.bsdsx.fr/2021/04/2021-04-30_opensmtpd.md.html). Petit rappel des faits:
 
 - un chroot minimal où opensmtpd est installé
 - les utilisateurs valides ne sont pas dans **/etc/passwd**
 - les courriels sont stockés à partir de **/opt/vmail**
+
+## Authentification des utilisateurs
 
 Pour authentifier un utilisateur, il me faut un fichier de type **passwd**:
 
@@ -284,5 +290,3 @@ Mais pour se faire je ne saurais trop recommander la lecture de:
 
 - https://poolp.org/posts/2019-12-23/mettre-en-place-un-serveur-de-mail-avec-opensmtpd-dovecot-et-rspamd
 - https://rodolphe.breard.tf/en/article/how-to-deploy-a-personal-email-server/
-
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/8](https://github.com/bsdsx/blog_posts/issues/8)

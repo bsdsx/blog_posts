@@ -1,5 +1,9 @@
-###### 202003260800 unbound shell
-# Bloquer des domaines avec unbound
+---
+title: Bloquer des domaines avec unbound
+id_issue: 4
+tags: unbound
+  shell
+---
 
 J'utilise [https://github.com/StevenBlack/hosts](https://github.com/StevenBlack/hosts) comme source de domaines à bloquer. Comme tout le monde, j'avais un script de conversion hosts vers unbound pour passer de
 
@@ -66,5 +70,3 @@ Quelques chiffres:
     55175 unbound       1  20    0    50M    38M select   3   0:31   0.00% local-unbound
 
 Un grand merci à shaft pour son article.
-
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/4](https://github.com/bsdsx/blog_posts/issues/4)

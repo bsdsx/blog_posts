@@ -1,7 +1,10 @@
-###### 202104302000 opensmtpd
-# Pour bien comprendre la configuration initiale de son serveur de courriel
+---
+title: Pour bien comprendre la configuration initiale de son serveur de courriel
+id_issue: 7
+tags: opensmtpd
+---
 
-Trouver une configuration pour [opensmtpd](https://opensmtpd.org/) prête à l'emploi n'est pas bien difficile mais j'aime bien partir de zéro et comprendre le pourquoi du comment. Pour se faire, je vais simplement installer **opensmtpd** dans un chroot, le lancer en mode debug et tester l'évolution de mon fichier de configuration.
+Trouver une configuration pour [OpenSMTPD](https://opensmtpd.org/) prête à l'emploi n'est pas bien difficile mais j'aime bien partir de zéro et comprendre le pourquoi du comment. Pour se faire, je vais simplement installer **opensmtpd** dans un chroot, le lancer en mode debug et tester l'évolution de mon fichier de configuration.
 
 ## Chroot et installation
 
@@ -517,5 +520,3 @@ Ma configuration initiale:
 - délivre (et qualifie) des courriels
 
 La prochaine étape abordera l'authentificaton des utilisateurs afin qu'ils puissent lire et envoyer du courriel.
-
-Commentaires: [https://github.com/bsdsx/blog_posts/issues/7](https://github.com/bsdsx/blog_posts/issues/7)
